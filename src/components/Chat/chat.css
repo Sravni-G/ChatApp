@@ -107,11 +107,15 @@ html {
   .bottom {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px;
-    gap: 20px;
     border-top: 1px solid grey;
 
     .icons {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       input[type="file"] {
         display: none;
       }
@@ -135,15 +139,17 @@ html {
         height: 50px;
       }
     }
-
-    button {
-      height: 50px;
-      width: 90px;
-      border-radius: 10px;
-      background-color: transparent;
-      border: 1px solid white;
-      color: white;
-      cursor: pointer;
+    .bttn {
+      flex: 2;
+      button {
+        height: 50px;
+        width: 90px;
+        border-radius: 10px;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        cursor: pointer;
+      }
     }
   }
   .emoparent {
