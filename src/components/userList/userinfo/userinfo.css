@@ -1,0 +1,29 @@
+.user {
+  /* flex: 1; */
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+.username {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.username img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.icons img {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  object-fit: cover;
+}

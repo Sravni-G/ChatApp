@@ -1,0 +1,12 @@
+.more {
+  position: absolute;
+  left: 430px;
+  top: 100px;
+  p {
+    font-size: larger;
+    background-color: blue;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+  }
+}
