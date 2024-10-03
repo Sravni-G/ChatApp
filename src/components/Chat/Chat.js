@@ -165,17 +165,18 @@ const Chat = () => {
             onClick={() => setText((text) => text + "❤️")}
           />
         </div>
-        <div className="emoparent">
-          {emoclicked ? (
-            <EmojiPicker
-              height={500}
-              width={400}
-              position={"absolete"}
-              onEmojiClick={(emo) => setText((text) => text + emo.emoji)}
-            />
-          ) : null}
-        </div>
+
         <button onClick={handleSend}>Send</button>
+      </div>
+      <div className="emoparent">
+        {emoclicked ? (
+          <EmojiPicker
+            height={500}
+            width={400}
+            position={"absolete"}
+            onEmojiClick={(emo) => setText((text) => text + emo.emoji)}
+          />
+        ) : null}
       </div>
     </div>
   );
