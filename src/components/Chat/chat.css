@@ -108,6 +108,7 @@ html {
     display: flex;
     width: 60vw;
     border-top: 1px solid grey;
+    justify-content: space-between;
 
     .icons {
       display: flex;
@@ -124,7 +125,7 @@ html {
     }
 
     .text {
-      flex: 2;
+      flex: 6;
       display: flex;
       align-items: center;
 

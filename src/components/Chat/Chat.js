@@ -165,6 +165,7 @@ const Chat = () => {
                   : null
                 : null
             }
+            placeholder="Type message here........."
           />
         </div>
 
