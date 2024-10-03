@@ -112,7 +112,6 @@ html {
     border-top: 1px solid grey;
 
     .icons {
-      flex: 1;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -136,10 +135,10 @@ html {
         border: none;
         color: white;
         height: 50px;
+        outline: none;
       }
     }
     .bttn {
-      flex: 1;
       button {
         height: 50px;
         width: 90px;
