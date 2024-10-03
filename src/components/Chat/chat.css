@@ -111,20 +111,21 @@ html {
     gap: 20px;
     border-top: 1px solid grey;
 
-    .text {
-      flex: 2;
-      display: flex;
-      align-items: center;
-
+    .icons {
+      input[type="file"] {
+        display: none;
+      }
       img {
         height: 30px;
         width: 30px;
         cursor: pointer;
       }
+    }
 
-      input[type="file"] {
-        display: none;
-      }
+    .text {
+      flex: 2;
+      display: flex;
+      align-items: center;
 
       input {
         flex: 2;
@@ -132,8 +133,6 @@ html {
         border: none;
         color: white;
         height: 50px;
-        max-width: 900px;
-        width: 100%;
       }
     }
 

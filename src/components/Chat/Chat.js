@@ -138,7 +138,7 @@ const Chat = () => {
         <div ref={endRef}></div>
       </div>
       <div className="bottom">
-        <div className="text">
+        <div className="icons">
           <label htmlFor="attachment">
             <img src={`${process.env.PUBLIC_URL}/attach.png`} />
           </label>
@@ -152,6 +152,8 @@ const Chat = () => {
             src={`${process.env.PUBLIC_URL}/heart.png`}
             onClick={() => setText((text) => text + "❤️")}
           />
+        </div>
+        <div className="text">
           <input
             type="text"
             value={text}
@@ -166,7 +168,9 @@ const Chat = () => {
           />
         </div>
 
-        <button onClick={handleSend}>Send</button>
+        <div className="bttn">
+          <button onClick={handleSend}>Send</button>
+        </div>
       </div>
       <div className="emoparent">
         {emoclicked ? (
