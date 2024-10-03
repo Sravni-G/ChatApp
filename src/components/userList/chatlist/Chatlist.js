@@ -83,7 +83,7 @@ export default function Chatlist() {
     <div className="chatlist">
       <div className="search">
         <div className="search-bar">
-          <img src="./search.png" alt="search-icon" />
+          <img src={`${process.env.PUBLIC_URL}/search.png`} alt="search-icon" />
           <input
             type="text"
             placeholder="Search user..."
@@ -93,10 +93,14 @@ export default function Chatlist() {
         </div>
 
         <img
-          src={toggleAdd ? "./minus.png" : "./plus.png"}
+          src={
+            toggleAdd
+              ? `${process.env.PUBLIC_URL}/minus.png`
+              : `${process.env.PUBLIC_URL}/plus.png`
+          }
           alt="icon"
           className="plus"
-          onClick={() => setToggleAdd((prev) => !prev)}
+          onClick={() => setToggleAdd((toggleAdd) => !toggleAdd)}
         />
       </div>
 

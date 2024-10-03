@@ -6,6 +6,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../lib/firebase";
 import { doc, setDoc } from "firebase/firestore";
 import Upload from "../../lib/upload";
+import Notification from "./Notification";
 
 export default function SignUp() {
   const [avatar, setAvatar] = useState({ file: null, url: "" });
@@ -22,22 +23,21 @@ export default function SignUp() {
       console.log("Entered try block ");
       const res = await createUserWithEmailAndPassword(auth, email, password);
       const imgurl = await Upload(avatar.file);
-      await setDoc(doc(db, "users", res.user.uid), {
+      await setDoc(doc(db, "users", res.user?.uid), {
         email,
         username,
-        id: res.user.uid,
+        id: res.user?.uid,
         avatar: imgurl,
         password,
         about,
       });
 
-      await setDoc(doc(db, "userchats", res.user.uid), {
+      await setDoc(doc(db, "userchats", res.user?.uid), {
         chats: [],
       });
       toast.success("Account Created Successfully!!!!");
     } catch (err) {
       console.log(err);
-      toast.error(err);
     } finally {
       setLoading(false);
     }
@@ -61,6 +61,7 @@ export default function SignUp() {
 
   return (
     <div className="auth">
+      <Notification />
       <div className="logout">
         <form onSubmit={(e) => handleRegister(e)}>
           <label>

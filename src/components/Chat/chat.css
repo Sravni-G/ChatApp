@@ -108,7 +108,6 @@ html {
     display: flex;
     align-items: center;
     padding: 10px;
-    /* background-color: rgb(26, 26, 46, 0.75); */
     gap: 20px;
     border-top: 1px solid grey;
 
@@ -128,11 +127,12 @@ html {
       }
 
       input {
-        flex: 1;
+        flex: 2;
         background-color: transparent;
         border: none;
         color: white;
         height: 50px;
+        max-width: 900px;
       }
     }
 
@@ -151,9 +151,6 @@ html {
     bottom: 70px;
     left: 450px;
   }
-
-  /* .emoji-picker-react {
-  } */
 }
 
 .center::webkit-scrollbar-thumb {

@@ -2,11 +2,9 @@ import { toast } from "react-toastify";
 import "./login.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../lib/firebase";
+import Notification from "./Notification";
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -20,11 +18,11 @@ export default function SignIn() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      setTimeout(() => navigate("/chats"), 100);
       toast.success("Logged In");
-      navigate("/chats");
     } catch (err) {
-      navigate("/login");
-      toast.error(err.code);
+      toast.error("Wrong Username/Password");
+      toast("Please try again");
     } finally {
       setLoading(false);
     }
@@ -32,6 +30,7 @@ export default function SignIn() {
 
   return (
     <div className="auth">
+      <Notification />
       <div className="login">
         <form onSubmit={handlelogin}>
           <label>
@@ -43,7 +42,7 @@ export default function SignIn() {
             Password:&nbsp;&nbsp;
             <input type="password" name="password" />
           </label>
-          <button>{loading ? "Loading!!!" : "SIGNIn"}</button>
+          <button>{loading ? "Loading!!!" : "SIGNIN"}</button>
         </form>
       </div>
     </div>

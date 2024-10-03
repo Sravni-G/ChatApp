@@ -49,10 +49,7 @@ const Chat = () => {
     console.log("handle send");
     console.log(attachment);
     console.log(text);
-    // if (text == "" || !attachment) {
-    //   console.log("No text");
-    //   return;
-    // }
+
     try {
       console.log("try block");
       if (!chatId) {
@@ -79,7 +76,7 @@ const Chat = () => {
         }),
       });
 
-      const userIds = [user.id, chatlistuser.id];
+      const userIds = [user?.id, chatlistuser?.id];
 
       userIds.forEach(async (id) => {
         const res = await getDoc(doc(db, "userchats", id));
@@ -113,7 +110,7 @@ const Chat = () => {
           <img src={chatlistuser.avatar} />
           <div className="text">
             <h2 style={{ color: "white", marginBottom: 0 }}>
-              {chatlistuser.username}
+              {chatlistuser?.username}
             </h2>
             <p style={{ color: "pink", marginTop: 0 }}>
               {chatlistuser?.about || "Busy...."}
@@ -121,15 +118,15 @@ const Chat = () => {
           </div>
         </div>
         <div className="icons">
-          <img src="./phone.png" />
-          <img src="./video.png" />
-          <img src="./info.png" />
+          <img src={`${process.env.PUBLIC_URL}/phone.png`} />
+          <img src={`${process.env.PUBLIC_URL}/video.png`} />
+          <img src={`${process.env.PUBLIC_URL}/info.png`} />
         </div>
       </div>
       <div className="center">
         {chat?.messages?.map((message) => (
           <div
-            className={message.senderId == user.id ? "message own" : "message"}
+            className={message.senderId == user?.id ? "message own" : "message"}
           >
             <div className="textmessage">
               {message.img && <img src={message.img} alt="sent a pic" />}
@@ -142,20 +139,29 @@ const Chat = () => {
       </div>
       <div className="bottom">
         <div className="text">
-          <label for="attachment">
-            <img src="./attach.png" />
+          <label htmlFor="attachment">
+            <img src={`${process.env.PUBLIC_URL}/attach.png`} />
           </label>
           <input type="file" id="attachment" onChange={handleAttachment} />
           <input
             type="text"
             value={text}
             onChange={(e) => setText(e.target.value)}
-            onKeyDown={(e) => (e.key == "Enter" ? handleSend() : null)}
+            onKeyDown={(e) =>
+              e.key == "Enter"
+                ? text || attachment
+                  ? handleSend()
+                  : null
+                : null
+            }
           />
-          <img src="./mic.png" />
-          <img src="./emoji.png" onClick={handleEmojis} />
+          <img src={`${process.env.PUBLIC_URL}/mic.png`} />
           <img
-            src="./heart.png"
+            src={`${process.env.PUBLIC_URL}/emoji.png`}
+            onClick={handleEmojis}
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/heart.png`}
             onClick={() => setText((text) => text + "❤️")}
           />
         </div>

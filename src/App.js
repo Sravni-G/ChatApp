@@ -25,6 +25,7 @@ function App() {
   }, [fetchUserInfo]);
   return (
     <Router>
+      <Notification />
       <Routes>
         <Route
           path="/"

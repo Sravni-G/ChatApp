@@ -10,12 +10,14 @@ import {
   updateDoc,
   arrayUnion,
 } from "firebase/firestore";
+import { toast } from "react-toastify";
 import { db } from "../../../lib/firebase";
 
 import "./adduser.css";
 import { useState } from "react";
 import { Userstore } from "../../../lib/Userstore";
 import { calculateDocumentSize } from "../../../lib/calculateDocumentSize";
+import Notification from "../../Auth/Notification";
 
 export default function Adduser() {
   const [useradded, setUseradded] = useState(null);
@@ -55,11 +57,16 @@ export default function Adduser() {
       var res = chats.some((chat) => chat.receiverid == useradded?.id);
     }
     setUserExist(res);
+    if (res) {
+      toast("User exist in chats!! Please search");
+    }
   };
 
   const handleAdd = async (founduser) => {
     console.log("add function");
-
+    if (founduser.id == user.id) {
+      return;
+    }
     try {
       const sizeInBytes = await calculateDocumentSize("userchats", user.id);
 
@@ -91,6 +98,8 @@ export default function Adduser() {
           updatedAt: Date.now(),
         }),
       });
+      toast.success("User added successfully");
+      setUserExist(true);
     } catch (err) {
       console.log(err);
     }
@@ -120,10 +129,11 @@ export default function Adduser() {
               handleAdd(useradded);
             }}
           >
-            Adduser
+            {userExist ? "Added" : "Adduser"}
           </button>
         </div>
       ) : null}
+      <Notification />
     </div>
   );
 }

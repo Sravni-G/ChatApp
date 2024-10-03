@@ -16,13 +16,13 @@ export default function Userinfo() {
       {toggleMore ? <More /> : null}
       <div className="icons">
         <img
-          src="./more.png"
+          src={`${process.env.PUBLIC_URL}/more.png`}
           alt="more-icon"
-          onClick={() => setToggleMore((prev) => !prev)}
+          onClick={() => setToggleMore((toggleMore) => !toggleMore)}
         />
 
-        <img src="./edit.png" alt="edit-icon" />
-        <img src="./video.png" alt="video-icon" />
+        <img src={`${process.env.PUBLIC_URL}/edit.png`} alt="edit-icon" />
+        <img src={`${process.env.PUBLIC_URL}/video.png`} alt="video-icon" />
       </div>
     </div>
   );

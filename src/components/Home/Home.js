@@ -1,5 +1,7 @@
+import Notification from "../Auth/Notification";
 import "./home.css";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -22,6 +24,7 @@ export default function Home() {
         <button onClick={() => handleClick("signup")}>SIGNUP</button>
         <button onClick={() => handleClick("signin")}>SIGNIN</button>
       </div>
+      <Notification />
     </div>
   );
 }
