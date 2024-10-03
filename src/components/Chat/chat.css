@@ -132,7 +132,6 @@ html {
       align-items: center;
 
       input {
-        flex: 2;
         background-color: transparent;
         border: none;
         color: white;
@@ -140,7 +139,7 @@ html {
       }
     }
     .bttn {
-      flex: 2;
+      flex: 1;
       button {
         height: 50px;
         width: 90px;
