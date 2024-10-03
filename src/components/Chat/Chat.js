@@ -143,6 +143,15 @@ const Chat = () => {
             <img src={`${process.env.PUBLIC_URL}/attach.png`} />
           </label>
           <input type="file" id="attachment" onChange={handleAttachment} />
+          <img src={`${process.env.PUBLIC_URL}/mic.png`} />
+          <img
+            src={`${process.env.PUBLIC_URL}/emoji.png`}
+            onClick={handleEmojis}
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/heart.png`}
+            onClick={() => setText((text) => text + "❤️")}
+          />
           <input
             type="text"
             value={text}
@@ -154,15 +163,6 @@ const Chat = () => {
                   : null
                 : null
             }
-          />
-          <img src={`${process.env.PUBLIC_URL}/mic.png`} />
-          <img
-            src={`${process.env.PUBLIC_URL}/emoji.png`}
-            onClick={handleEmojis}
-          />
-          <img
-            src={`${process.env.PUBLIC_URL}/heart.png`}
-            onClick={() => setText((text) => text + "❤️")}
           />
         </div>
 
