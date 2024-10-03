@@ -152,8 +152,6 @@ const Chat = () => {
             src={`${process.env.PUBLIC_URL}/heart.png`}
             onClick={() => setText((text) => text + "❤️")}
           />
-        </div>
-        <div className="text">
           <input
             type="text"
             placeholder="Type message here........."
@@ -168,7 +166,6 @@ const Chat = () => {
             }
           />
         </div>
-
         <div className="bttn">
           <button onClick={handleSend}>Send</button>
         </div>
