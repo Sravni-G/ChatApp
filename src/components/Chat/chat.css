@@ -109,6 +109,7 @@ html {
     width: 60vw;
     border-top: 1px solid grey;
     justify-content: space-between;
+    padding: 10px;
 
     .icons {
       display: flex;
@@ -128,6 +129,7 @@ html {
       flex: 6;
       display: flex;
       align-items: center;
+      gap: 10px;
 
       input {
         background-color: transparent;

@@ -156,6 +156,7 @@ const Chat = () => {
         <div className="text">
           <input
             type="text"
+            placeholder="Type message here........."
             value={text}
             onChange={(e) => setText(e.target.value)}
             onKeyDown={(e) =>
@@ -165,7 +166,6 @@ const Chat = () => {
                   : null
                 : null
             }
-            placeholder="Type message here........."
           />
         </div>
 
