@@ -91,9 +91,9 @@ export default function SignUp() {
           </label>
 
           <button disabled={loading}>
-            {loading ? "Loading!!!" : "Signup"}
+            {loading ? "Loading!!!" : "SIGNUP"}
           </button>
-          <button onClick={handleclick}>Signin</button>
+          <button onClick={handleclick}>SIGNIN</button>
         </form>
       </div>
     </div>

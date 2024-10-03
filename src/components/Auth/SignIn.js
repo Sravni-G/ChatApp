@@ -43,7 +43,7 @@ export default function SignIn() {
             Password:&nbsp;&nbsp;
             <input type="password" name="password" />
           </label>
-          <button>{loading ? "Loading!!!" : "LogIn"}</button>
+          <button>{loading ? "Loading!!!" : "SIGNIn"}</button>
         </form>
       </div>
     </div>
